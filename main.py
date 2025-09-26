@@ -1,3 +1,4 @@
+import string
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -13,8 +14,8 @@ app.add_middleware(
 )
 
 @app.post("/scan")
-async def scan_qr(data: dict):
-    code = data.get("code")
-    # Save code to database or process as needed
-    print(f"Received QR code: {code}")
-    return {"status": "success", "code": code}
+async def scan_qr(request: Request):
+    data = await request.json()
+    qr_code = data.get("code")
+    # Process the QR code here (e.g., validate, store, etc.)
+    return {"message": "QR code received", "code": qr_code}
