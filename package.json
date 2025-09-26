@@ -60,4 +60,3 @@
             "postinstall": "chmod +x node_modules/.bin/vite"
       }
 }
-s
