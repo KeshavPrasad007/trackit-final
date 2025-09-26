@@ -55,7 +55,7 @@ export function TrackerLayout({ children, className = "" }: TrackerLayoutProps) 
           transition={{ delay: 1 }}
         >
           <Database className="h-3 w-3 text-blue-500" />
-          <span className="text-muted-foreground">Supabase</span>
+          <span className="text-muted-foreground">Fast Api</span>
           <div className="h-1.5 w-1.5 bg-green-500 rounded-full animate-pulse" />
         </motion.div>
         <motion.div 
