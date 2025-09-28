@@ -218,4 +218,14 @@ export function LoginScreen({ onLogin, isLoading = false }: LoginScreenProps) {
       </motion.div>
     </div>
   );
+  async function handleLogin(email: string, password: string, role: string) {
+  const response = await fetch('https://trackit-final1.onrender.com/login', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email, password, role }),
+  });
+  const data = await response.json();
+  alert(data.message); // Show confirmation message
+}
+<LoginScreen onLogin={handleLogin} />
 }
